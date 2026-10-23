@@ -107,5 +107,24 @@ public class CatalogoMelodias {
         return cantantesTotal;
     }
 
+    public ArrayList<Melodia> cancionesPorGenero(){
+        ArrayList<Melodia> todasLasCancionesOrdenadasPorGenero = new ArrayList<>();
+
+        Genero [] generos = Genero.values();
+
+        //Se ordenan las canciones por genero
+        for (int i = 0; i < generos.length; i++){
+            for (int j = 0; j < canciones.size(); j++) {
+                if (canciones.get(j).getGenero().equals(generos[i].toString())) {
+                    todasLasCancionesOrdenadasPorGenero.add(canciones.get(j));
+                }
+            }
+        }
+
+        return todasLasCancionesOrdenadasPorGenero;
+    }
+
+
+
 
 }
