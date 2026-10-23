@@ -175,7 +175,18 @@ public class CatalogoMelodias {
     }
 
 
+    public ArrayList<Melodia> melodiasPorAnio(int anio){
+        ArrayList<Melodia> todasLasCancionesOrdenadasPorAnio = new ArrayList<>();
 
+        //Se ordenan las canciones por cantante
+        for (int i = 0; i < canciones.size(); i++){
+            if (canciones.get(i).getAnio() == anio) {
+                todasLasCancionesOrdenadasPorAnio.add(canciones.get(i));
+            }
+        }
+
+        return todasLasCancionesOrdenadasPorAnio;
+    }
 
 
 
