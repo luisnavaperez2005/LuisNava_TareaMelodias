@@ -94,5 +94,18 @@ public class CatalogoMelodias {
         return precioTotal;
     }
 
+    public int cantidadDeCantantes(){
+        HashSet<String> cantantesDiferentes = new HashSet<>();
+        int cantantesTotal = 0;
+
+        for (int i = 0; i < canciones.size(); i++){
+            cantantesDiferentes.add(canciones.get(i).getCantante());
+        }
+
+        cantantesTotal = cantantesDiferentes.size();
+
+        return cantantesTotal;
+    }
+
 
 }
