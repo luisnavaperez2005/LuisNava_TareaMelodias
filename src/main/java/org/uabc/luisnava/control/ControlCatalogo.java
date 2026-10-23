@@ -32,6 +32,7 @@ public class ControlCatalogo {
                     vista.mostrarCadena(modelo.mostrarTodasLasCanciones());
                     break;
 
+
                 case 3:
                     vista.mostrarCadena("Adios");
                     break;
