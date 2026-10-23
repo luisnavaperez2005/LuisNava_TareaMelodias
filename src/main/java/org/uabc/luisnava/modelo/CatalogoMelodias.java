@@ -1,7 +1,5 @@
 package org.uabc.luisnava.modelo;
 
-import org.uabc.luisnava.vista.CatalogoView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -159,9 +157,24 @@ public class CatalogoMelodias {
         formatos.put("wav", wav);
 
 
-
         return formatos;
     }
+
+
+    public ArrayList<Melodia> melodiasPorCantante(String cantante){
+        ArrayList<Melodia> todasLasCancionesOrdenadasPorCantante = new ArrayList<>();
+
+        //Se ordenan las canciones por cantante
+        for (int i = 0; i < canciones.size(); i++){
+            if (canciones.get(i).getCantante().equals(cantante)) {
+                todasLasCancionesOrdenadasPorCantante.add(canciones.get(i));
+            }
+        }
+
+        return todasLasCancionesOrdenadasPorCantante;
+    }
+
+
 
 
 
