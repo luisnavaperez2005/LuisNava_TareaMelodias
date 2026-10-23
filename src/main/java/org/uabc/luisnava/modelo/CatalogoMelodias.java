@@ -3,12 +3,15 @@ package org.uabc.luisnava.modelo;
 import org.uabc.luisnava.vista.CatalogoView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class CatalogoMelodias {
     ArrayList<Melodia> canciones = new ArrayList<>();
     private int id = 1;
+
+    String [] formatosParaMelodia = {"mp3", "ogg", "wav"};
 
     public boolean registrarMelodia(Melodia obj){
         boolean ban = false;
@@ -107,7 +110,7 @@ public class CatalogoMelodias {
         return cantantesTotal;
     }
 
-    public ArrayList<Melodia> cancionesPorGenero(){
+    public ArrayList<Melodia> melodiasPorGenero(){
         ArrayList<Melodia> todasLasCancionesOrdenadasPorGenero = new ArrayList<>();
 
         Genero [] generos = Genero.values();
@@ -131,6 +134,33 @@ public class CatalogoMelodias {
             generosSinRepetir.add(canciones.get(i).getGenero());
         }
         return generosSinRepetir;
+    }
+
+    public HashMap<String, Integer> formatosMelodias(){
+        HashMap<String, Integer> formatos = new HashMap<>();
+        int mp3 = 0;
+        int wav = 0;
+        int ogg = 0;
+
+        for (int i = 0; i < canciones.size(); i++){
+            if (canciones.get(i).getFormato().equals(formatosParaMelodia[0])){
+                mp3++;
+            }
+            else if (canciones.get(i).getFormato().equals(formatosParaMelodia[1])){
+                ogg++;
+            }
+            else if (canciones.get(i).getFormato().equals(formatosParaMelodia[2])){
+                wav++;
+            }
+        }
+
+        formatos.put("mp3", mp3);
+        formatos.put("ogg", ogg);
+        formatos.put("wav", wav);
+
+
+
+        return formatos;
     }
 
 
