@@ -124,6 +124,15 @@ public class CatalogoMelodias {
         return todasLasCancionesOrdenadasPorGenero;
     }
 
+    public HashSet<String> generosMusicalesColeccion(){
+        HashSet<String> generosSinRepetir = new HashSet<>();
+
+        for (int i = 0; i < canciones.size(); i++){
+            generosSinRepetir.add(canciones.get(i).getGenero());
+        }
+        return generosSinRepetir;
+    }
+
 
 
 
