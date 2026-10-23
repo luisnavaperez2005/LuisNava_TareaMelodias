@@ -90,7 +90,6 @@ public class CatalogoView {
     }
 
 
-
     /*
         Melodia cancion1 = new Melodia();
         Melodia cancion2 = new Melodia();
