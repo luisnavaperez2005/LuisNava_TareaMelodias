@@ -1,5 +1,7 @@
 package org.uabc.luisnava.modelo;
 
+import org.uabc.luisnava.vista.CatalogoView;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.stream.Collectors;
@@ -78,9 +80,18 @@ public class CatalogoMelodias {
     }
 
     public Melodia corregirLosDatosDeUnaMelodia(Melodia melodia){
-        //melodia.setNombre();
 
         return melodia;
+    }
+
+    public double valorDeLaColeccion(){
+        double precioTotal = 0;
+
+        for (int i = 0; i < canciones.size(); i++){
+            precioTotal += canciones.get(i).getPrecio();
+        }
+
+        return precioTotal;
     }
 
 
