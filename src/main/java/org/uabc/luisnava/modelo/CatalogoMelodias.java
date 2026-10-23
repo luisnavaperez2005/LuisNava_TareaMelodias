@@ -56,4 +56,22 @@ public class CatalogoMelodias {
         registrarMelodia(new Melodia(nombre, compositor, anio, genero, cantante, precio, formato));
     }
 
+    public void eliminarMelodiaPorNombre(String nombre){
+        for (int i = 0; i < canciones.size(); i++){
+            if (canciones.get(i).getNombre().equals(nombre)){
+                canciones.remove(i);
+                //Se hace un -- para que el indice no se rompa
+                i--;
+            }
+        }
+    }
+
+    public void consultarMelodiaPorNombre(String nombre){
+        for (int i = 0; i < canciones.size(); i++){
+            if (canciones.get(i).getNombre().equals(nombre)){
+                System.out.println(canciones.get(i));
+            }
+        }
+    }
+
 }
