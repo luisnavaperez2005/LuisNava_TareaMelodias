@@ -67,12 +67,21 @@ public class CatalogoMelodias {
     }
 
 
-    public void consultarMelodiaPorNombre(String nombre){
+    public ArrayList<Melodia> consultarMelodiaPorNombre(String nombre){
+        ArrayList<Melodia> cancionesEncontradas = new ArrayList<>();
         for (int i = 0; i < canciones.size(); i++){
             if (canciones.get(i).getNombre().equals(nombre)){
-                System.out.println(canciones.get(i));
+                cancionesEncontradas.add(canciones.get(i));
             }
         }
+        return cancionesEncontradas;
     }
+
+    public Melodia corregirLosDatosDeUnaMelodia(Melodia melodia){
+        //melodia.setNombre();
+
+        return melodia;
+    }
+
 
 }
