@@ -1,6 +1,7 @@
 package org.uabc.luisnava.modelo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.stream.Collectors;
@@ -186,6 +187,30 @@ public class CatalogoMelodias {
         }
 
         return todasLasCancionesOrdenadasPorAnio;
+    }
+
+
+    public ArrayList<Melodia> consultaGeneral(int opcion){
+        ArrayList<Melodia> melodiasParaRegresar = new ArrayList<>();
+        switch (opcion){
+            //Orden alfabetico
+            case 1:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getNombre)).
+                        collect(Collectors.toCollection(ArrayList::new));
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+
+        }
+        return melodiasParaRegresar;
     }
 
 
