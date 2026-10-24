@@ -2,6 +2,11 @@ package org.uabc.luisnava.vista;
 
 
 import org.uabc.luisnava.modelo.Genero;
+import org.uabc.luisnava.modelo.Melodia;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class CatalogoView {
@@ -29,7 +34,8 @@ public class CatalogoView {
         System.out.println("12. Melodias por Cantante");
         System.out.println("13. Melodias por año");
         System.out.println("14. Consulta General");
-        System.out.println(". Salir");
+        System.out.println("15. Cantidad de formatos en la coleccion");
+        System.out.println("16. Salir");
         System.out.println("Elige una opcion: ");
         return leerNumeros.nextInt();
     }
@@ -52,6 +58,11 @@ public class CatalogoView {
     public int leerAnioMelodia(){
         System.out.println("Ingresa el año de la melodia: ");
         return leerCadenas.nextInt();
+    }
+
+    public String leerGenero(){
+        System.out.println("Ingresa el Genero de la melodia: ");
+        return leerCadenas.nextLine();
     }
 
     public void mostrarCatalogo(String catalago){
@@ -102,42 +113,45 @@ public class CatalogoView {
     }
 
 
-    /*
-        Melodia cancion1 = new Melodia();
-        Melodia cancion2 = new Melodia();
-        Melodia cancion3 = new Melodia();
+    public void mostrarArrayList(ArrayList<Melodia> melodias){
+        System.out.println(melodias);
+    }
 
-        ArrayList<Melodia> cancionesPorCompositor = new ArrayList<>();
+    public int leerIdMelodia(){
+        System.out.println("Ingresa el ID de la melodia: ");
+        return leerCadenas.nextInt();
+    }
 
-        CatalogoMelodias catalogoMelodias = new CatalogoMelodias();
+    public void mostrarInt(int entero){
+        System.out.println(entero);
+    }
 
-        cancion1.setNombre("Si no te hubieras ido");
-        cancion2.setNombre("Las mañanitas");
-        cancion3.setNombre("Las mañanitas");
+    public void mostrarDouble(double numero){
+        System.out.println(numero);
+    }
 
-        cancion1.setGenero("Romantica");
-        cancion2.setGenero("Regional Mexicana");
-        cancion3.setGenero("Grupera");
+    public void mostrarHashSet(HashSet<String> hashSet){
+        System.out.println(hashSet);
+    }
 
-
-        cancion1.setCantante("Marco Antonio Solis");
-        cancion2.setCantante("Vicente Fernandez");
-        cancion3.setCantante("Alejandro Fernandez");
-
-
-        cancion1.setCompositor("Juan Gabriel");
-        cancion2.setCompositor("Juan Gabriel");
-        cancion3.setCompositor("Espinoza Paz");
-
-        catalogoMelodias.registrarMelodia(cancion1);
-        catalogoMelodias.registrarMelodia(cancion2);
-        catalogoMelodias.registrarMelodia(cancion3);
+    public int leerOpcion(){
+        System.out.println("La opcion: ");
+        return leerCadenas.nextInt();
+    }
 
 
-        System.out.println(catalogoMelodias.obtenerTodosLosGenerosIterativo());
+    public void mostrarHashMap(HashMap<String, Integer> hashMap){
+        System.out.println(hashMap);
+    }
 
-        System.out.println(catalogoMelodias.melodiasPorCompositor("Juan Gabriel"));
-        */
+    public void mostrarMenuConsultaGeneral(){
+        System.out.println("1. Orden alfabetico (A-Z)");
+        System.out.println("2. Por Artista (A-Z)");
+        System.out.println("3. Por compositor (A-Z)");
+        System.out.println("4. Por genero (A-Z)");
+        System.out.println("5. Por formato");
+        System.out.println("7. Por año");
+    }
 
 
 }
