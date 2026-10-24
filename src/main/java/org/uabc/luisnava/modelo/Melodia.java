@@ -12,7 +12,7 @@ public class Melodia {
     private String formato;
 
     public Melodia(String nombre, String compositor, int anio, String genero, String cantante, double precio, String formato) {
-        //this.id = this.hashCode();
+        this.id = this.hashCode();
         this.nombre = nombre;
         this.compositor = compositor;
         this.anio = anio;
