@@ -205,6 +205,8 @@ public class CatalogoMelodias {
                         collect(Collectors.toCollection(ArrayList::new));
                 break;
             case 3:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getCompositor)).
+                        collect(Collectors.toCollection(ArrayList::new));
                 break;
             case 4:
                 break;
