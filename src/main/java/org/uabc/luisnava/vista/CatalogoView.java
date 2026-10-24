@@ -17,7 +17,19 @@ public class CatalogoView {
         System.out.println("\n---- Menu Catalogo de Melodias ----");
         System.out.println("1. Registrar Melodia");
         System.out.println("2. Mostrar todo el catalogo");
-        System.out.println("3. Salir");
+        System.out.println("3. Eliminar melodia por nombre");
+        System.out.println("4. Datos de melodia por nombre");
+        System.out.println("5. Corregir datos de Melodia");
+        System.out.println("6. Costo total de la coleccion");
+        System.out.println("7. Cantidad Cantantes Diferentes");
+        System.out.println("8. Cantantes en la coleccion");
+        System.out.println("9. Melodias por genero");
+        System.out.println("10. Generos en la coleccion");
+        System.out.println("11. Melodias por compositor");
+        System.out.println("12. Melodias por Cantante");
+        System.out.println("13. Melodias por año");
+        System.out.println("14. Consulta General");
+        System.out.println(". Salir");
         System.out.println("Elige una opcion: ");
         return leerNumeros.nextInt();
     }
