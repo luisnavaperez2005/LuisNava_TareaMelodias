@@ -81,7 +81,15 @@ public class CatalogoMelodias {
         return cancionesEncontradas;
     }
 
-    public Melodia corregirLosDatosDeUnaMelodia(Melodia melodia){
+    public Melodia corregirLosDatosDeUnaMelodia(Melodia melodia, String nombre, String compositor, int anio,
+                                                String genero , String cantante, double precio, String formato){
+        melodia.setNombre(nombre);
+        melodia.setCompositor(compositor);
+        melodia.setAnio(anio);
+        melodia.setGenero(genero);
+        melodia.setCantante(cantante);
+        melodia.setPrecio(precio);
+        melodia.setFormato(formato);
 
         return melodia;
     }
