@@ -204,23 +204,51 @@ public class CatalogoMelodias {
                 melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getCantante)).
                         collect(Collectors.toCollection(ArrayList::new));
                 break;
+
+
+            //Por compositor
             case 3:
                 melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getCompositor)).
                         collect(Collectors.toCollection(ArrayList::new));
                 break;
+
+
+             //Por genero
             case 4:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getGenero)).
+                        collect(Collectors.toCollection(ArrayList::new));
                 break;
             case 5:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getFormato)).
+                        collect(Collectors.toCollection(ArrayList::new));
                 break;
+
+
+            //Por precio de menor a Mayor
             case 6:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getPrecio)).
+                        collect(Collectors.toCollection(ArrayList::new));
                 break;
+
+            //Por año
             case 7:
+                melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getAnio)).
+                        collect(Collectors.toCollection(ArrayList::new));
                 break;
 
         }
         return melodiasParaRegresar;
     }
 
+    public HashSet<String> nombreDeLosCantantes(){
+        HashSet <String> cantantesSinRepetir = new HashSet<>();
+
+        for (int i = 0; i < canciones.size(); i++){
+            cantantesSinRepetir.add(canciones.get(i).getCantante());
+        }
+
+        return cantantesSinRepetir;
+    }
 
 
 }
