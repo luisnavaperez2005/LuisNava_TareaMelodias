@@ -23,7 +23,9 @@ public class CatalogoMelodias {
             }
         }
         if (!ban){
+            obj.setId(id);
             canciones.add(obj);
+            id++;
         }
         //False si se registro la cancion
         return ban;
@@ -81,16 +83,19 @@ public class CatalogoMelodias {
         return cancionesEncontradas;
     }
 
-    public Melodia corregirLosDatosDeUnaMelodia(Melodia melodia, String nombre, String compositor, int anio,
+    public Melodia corregirLosDatosDeUnaMelodia(int id, String nombre, String compositor, int anio,
                                                 String genero , String cantante, double precio, String formato){
-        melodia.setNombre(nombre);
-        melodia.setCompositor(compositor);
-        melodia.setAnio(anio);
-        melodia.setGenero(genero);
-        melodia.setCantante(cantante);
-        melodia.setPrecio(precio);
-        melodia.setFormato(formato);
 
+        Melodia melodia = buscarMelodiaID(id);
+        if (melodia != null) {
+            melodia.setNombre(nombre);
+            melodia.setCompositor(compositor);
+            melodia.setAnio(anio);
+            melodia.setGenero(genero);
+            melodia.setCantante(cantante);
+            melodia.setPrecio(precio);
+            melodia.setFormato(formato);
+        }
         return melodia;
     }
 
@@ -226,6 +231,8 @@ public class CatalogoMelodias {
                 melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getGenero)).
                         collect(Collectors.toCollection(ArrayList::new));
                 break;
+
+                //Por Formato
             case 5:
                 melodiasParaRegresar = canciones.stream().sorted(Comparator.comparing(Melodia::getFormato)).
                         collect(Collectors.toCollection(ArrayList::new));
@@ -256,6 +263,16 @@ public class CatalogoMelodias {
         }
 
         return cantantesSinRepetir;
+    }
+
+
+    public Melodia buscarMelodiaID(int id) {
+        for (Melodia melodia : canciones) {
+            if (melodia.getId() == id) {
+                return melodia;
+            }
+        }
+        return null;
     }
 
 
